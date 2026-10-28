@@ -3,10 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIBERone Караганда</title>
-<meta http-equiv="refresh" content="0; url=kiberone.html">
+<title>Международная кибершкола | Караганда</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --off: #f5f5f5;
+  --gray: #86868b;
+  --yellow: #FFD60A;
+  --yellow-bright: #FFE500;
+  --yellow-dark: #E6C000;
+  --card-bg: #ffffff;
+  --dark-bg: #111111;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", sans-serif;
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid #e5e5e5;
+}
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  height: 56px; font-size: 14px; font-weight: 500;
+}
+nav .logo { font-weight: 800; font-size: 22px; letter-spacing: -0.8px; }
+nav a { color: var(--black); opacity: 0.75; transition: 0.2s; text-decoration: none; }
+nav a:hover { opacity: 1; }
+.hero {
+  padding: 110px 0 90px;
+  text-align: center;
+  background: var(--black);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 800;
+  letter-spacing: -2.5px;
+  line-height: 0.98;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: clamp(18px, 2.4vw, 24px);
+  color: #d1d1d6;
+  max-width: 720px;
+  margin: 0 auto 36px;
+}
+.btn {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 980px;
+  text-decoration: none;
+}
+.btn-yellow { background: var(--yellow); color: var(--black); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+section { padding: 100px 0; }
+h2 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.subtitle {
+  text-align: center;
+  color: var(--gray);
+  font-size: 20px;
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+.dark-section { background: #111; color: var(--white); }
+.alt-section { background: var(--off); }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+.stat {
+  text-align: center;
+  padding: 28px 16px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+}
+.stat .num { font-size: 42px; font-weight: 800; color: var(--yellow); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid #eee;
+}
+.price-box {
+  background: var(--yellow);
+  color: var(--black);
+  border-radius: 24px;
+  padding: 48px;
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+.price { font-size: 64px; font-weight: 800; }
+.discounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.discount {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+footer {
+  background: var(--black);
+  color: #86868b;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 13px;
+}
+@media (max-width: 768px) {
+  .hero { padding: 80px 0 60px; }
+  section { padding: 70px 0; }
+}
+</style>
 </head>
 <body>
-<p>Перенаправление на <a href="kiberone.html">главную</a>...</p>
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">KIBERone</a>
+    </nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="container">
+    <h1>Первая международная<br>школа будущего<br>для нового Айти поколения</h1>
+    <p>Международная школа цифровых технологий для детей 6–14 лет. Развиваем реальные IT-навыки.</p>
+    <div class="hero-btns">
+      <a href="#price" class="btn btn-yellow">Стоимость и скидки</a>
+      <a href="#learn" class="btn btn-outline">Что изучаем</a>
+    </div>
+  </div>
+</section>
+<section id="about" class="dark-section">
+  <div class="container">
+    <p class="subtitle">Первая международная школа будущего. Полноценное последовательное обучение, а не разовые курсы.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">1500+</div><div class="label">школ в мире</div></div>
+      <div class="stat"><div class="num">36</div><div class="label">стран</div></div>
+      <div class="stat"><div class="num">470+</div><div class="label">городов</div></div>
+      <div class="stat"><div class="num">80 000+</div><div class="label">детей</div></div>
+      <div class="stat"><div class="num">60+</div><div class="label">модулей</div></div>
+    </div>
+  </div>
+</section>
+<section id="learn">
+  <div class="container">
+    <h2>Чему учим</h2>
+    <p class="subtitle">Практические навыки. Программа адаптирована под возраст: Junior (6–8), Middle (9–11), Senior (12–14).</p>
+    <div style="text-align:center;margin-bottom:40px;">
+      <a href="modules.html" class="btn btn-yellow">Просмотреть программу</a>
+    </div>
+  </div>
+</section>
+<section id="price" style="background:var(--black);color:var(--white);">
+  <div class="container">
+    <h2 style="color:var(--white);">Стоимость и скидки</h2>
+    <div class="price-box">
+      <div style="font-size:15px;color:#333;">Цена обучения</div>
+      <div class="price" style="color:var(--black);">29 000 <span style="color:#333;">₸ / месяц</span></div>
+      <div style="color:#333;font-size:16px;">Включает 4 практических занятия</div>
+    </div>
+    <div class="discounts">
+      <div class="discount">При оплате 4 месяцев и более — 10%</div>
+      <div class="discount">Для многодетных семей — 10%</div>
+      <div class="discount">Два и более ребёнка из одной семьи — 10%</div>
+      <div class="discount">За каждого приведённого друга — 10%</div>
+      <div class="discount">При оплате года (9 месяцев) — 15%</div>
+      <div class="discount">Доп. скидка за решение в течение 72 часов после пробного урока</div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="alt-section">
+  <div class="container">
+    <h2>в Караганде</h2>
+    <p class="subtitle">Занятия проходят по выходным. Начните с бесплатного пробного урока.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto;">
+      <div style="background:white;border-radius:20px;padding:32px;">
+        <h3>Локации</h3>
+        <p>Гоголя 34А, блок 1, офис 101<br>проспект Строителей, 33/1</p>
+      </div>
+      <div style="background:white;border-radius:20px;padding:32px;">
+        <h3>Контакты</h3>
+        <p><a href="tel:+77084396200">+7 (708) 439-62-00</a><br>
+        <a href="mailto:karaganda@kiber-one.com">karaganda@kiber-one.com</a></p>
+      </div>
+      <div style="background:white;border-radius:20px;padding:32px;">
+        <h3>Расписание</h3>
+        <p>Суббота и воскресенье<br>11:00–13:00 · 13:30–15:30 · 16:00–18:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    Международная школа цифровых технологий для детей 6–14 лет · Караганда<br>
+    © 2026
+  </div>
+</footer>
 </body>
 </html>

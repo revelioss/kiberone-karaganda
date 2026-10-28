@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Программа обучения 2026–2027 | KIBERone</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body { font-family: Inter, sans-serif; background: #fff; color: #000; margin: 0; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+header { position: sticky; top: 0; background: rgba(255,255,255,0.94); border-bottom: 1px solid #e5e5e5; }
+nav { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+.nav-cta { background: #FFD60A; color: #000; padding: 8px 18px; border-radius: 980px; font-weight: 600; text-decoration: none; }
+.hero { padding: 80px 0 50px; text-align: center; background: #000; color: #fff; }
+.tabs { display: flex; justify-content: center; gap: 12px; padding: 32px 0; flex-wrap: wrap; }
+.tab { background: #f0f0f0; border: none; padding: 12px 28px; border-radius: 980px; font-weight: 600; cursor: pointer; }
+.tab.active { background: #FFD60A; }
+.group { display: none; }
+.group.active { display: block; }
+.year-block { background: #f5f5f5; border-radius: 16px; margin-bottom: 16px; }
+.year-header { padding: 20px 24px; cursor: pointer; font-weight: 700; font-size: 18px; }
+.year-content { max-height: 0; overflow: hidden; transition: 0.4s; padding: 0 24px; }
+.year-block.open .year-content { max-height: 5000px; padding-bottom: 20px; }
+.modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px; }
+.module { background: #fff; border-radius: 12px; padding: 16px; cursor: pointer; border: 1px solid #eee; }
+.module .desc { max-height: 0; overflow: hidden; transition: 0.3s; font-size: 13.5px; color: #555; }
+.module.open .desc { max-height: 220px; margin-top: 10px; }
+@media (max-width: 900px) { .modules-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .modules-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header><div class="container"><nav><a href="index.html">На главную</a><a href="index.html" class="nav-cta">Главная</a></nav></div></header>
+<section class="hero"><div class="container"><h1>Программа обучения 2026–2027</h1><p>Каждый год — отдельный блок. Нажми на год, чтобы открыть модули.</p></div></section>
+<div class="container">
+  <div class="tabs">
+    <button class="tab active" data-group="junior">Младшая 6–8 лет</button>
+    <button class="tab" data-group="middle">Средняя 9–11 лет</button>
+    <button class="tab" data-group="senior">Старшая 12–14 лет</button>
+  </div>
+  <div class="group active" id="junior">
+    <div class="year-block"><div class="year-header">1 год. Digital Start ▼</div><div class="year-content"><div class="modules-grid">
+      <div class="module"><h3>1. Вводный модуль</h3><div class="desc">Создаём цифровые проекты и знакомимся с ИИ.</div></div>
+      <div class="module"><h3>2. Scratch Junior</h3><div class="desc">Визуальные команды и алгоритмы.</div></div>
+    </div></div></div>
+    <p style="margin:20px 0;color:#555;">Полная программа всех годов доступна в файле. Нажми на год, чтобы раскрыть.</p>
+  </div>
+  <div class="group" id="middle"><p>Средняя группа — 6 лет обучения.</p></div>
+  <div class="group" id="senior"><p>Старшая группа — 4 года обучения.</p></div>
+</div>
+<div style="text-align:center;padding:40px 0;"><a href="index.html" class="nav-cta">Вернуться на главную</a></div>
+<footer style="background:#000;color:#86868b;padding:36px 0;text-align:center;">Программа 2026–2027 · Караганда</footer>
+<script>
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.group').forEach(g => g.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.group).classList.add('active');
+  });
+});
+document.querySelectorAll('.year-header').forEach(h => {
+  h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+});
+document.querySelectorAll('.module').forEach(c => {
+  c.addEventListener('click', e => { e.stopPropagation(); c.classList.toggle('open'); });
+});
+</script>
+</body>
+</html>
